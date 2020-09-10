@@ -1,1 +1,64 @@
-<p>form works!</p>
+<div class="form">
+  <div class="box">
+    <div class="row mt-3"><h3 class="m-auto">Thông tin sản phẩm</h3></div>
+    <div class="row mt-5">
+
+      <!-- textbox nhap -->
+      <div class="col-6">
+        <div class="textbox">
+          <span>Tên sản phẩm </span>
+          <input type="text">
+        </div>
+        <div class="textbox">
+          <span>Loại sản phẩm </span>
+          <input type="text">
+        </div> <div class="textbox">
+          <span>Số lượng </span>
+          <input type="text">
+        </div>
+      </div>
+       <!--end textbox nhap -->
+
+      <!--Chon ảnh  -->
+      <div class="col-6">
+        <div class="row">
+          <div class="col-5 h-100">
+            <br><br><br>
+            <span>Ảnh sản phẩm</span>
+          </div>
+          <div class="col-7 select-img">
+           <i class="far fa-file" style="font-size: 150px;cursor: pointer;" (click)="ChoseFile()"></i>
+           <input type="file" style="display: none;" id="file" [(ngModel)]="pathImg">
+          </div>
+
+        </div>
+      </div>
+      <!-- end chọn ảnh -->
+
+    </div>
+    <!-- button luu & hủy -->
+    <div class="row mt-4">
+      <div class="m-auto">
+      <button class="btn btn-success mr-5">Save</button>
+      <button class="btn btn-danger">Hủy</button>
+    </div>
+    </div>
+    <!-- end button l & h -->
+
+  </div>
+  <!-- data table -->
+  <div class="box">
+    <table class="table table-hover">
+      <thead>
+        <th>Tên</th>
+        <th>Loại SP</th>
+        <th>Số lượng</th>
+
+      </thead>
+    </table>
+
+  </div>
+  <!-- end data table -->
+</div>
+
+

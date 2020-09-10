@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class FormComponent implements OnInit {
 
   constructor() { }
-
+  pathImg:string='';
   ngOnInit(): void {
-  }
 
+
+  }
+  ChoseFile(){
+   document.getElementById('file').click();
+   console.log(this.pathImg);
+
+  }
 }
