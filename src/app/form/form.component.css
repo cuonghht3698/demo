@@ -1,5 +1,6 @@
 .form{
-  background-color: antiquewhite;
+  border: 2px solid black;
+  border-radius: 10px;
   height: 730px;
   width: 780px;
   position: absolute;
@@ -8,6 +9,7 @@
   left: 50%;
   display: flex;
   flex-direction: column;
+  background-color: rgb(88, 86, 90);
 }
 
 .form .box{
@@ -15,6 +17,9 @@
   width: 95%;
   margin:auto;
   border:1px black solid;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(205, 202, 209);
 }
 .textbox{
   margin-top: 20px;
@@ -24,4 +29,31 @@
   width: 130px;
   display: inline-block;
 }
+table img{
+  width: 50px;
+  height: 40px;
+}
 
+#preview{
+  border: 1px black solid;
+  border-radius: 3px;
+  width: 170px;
+  cursor: pointer;
+  height: 150px;
+}
+
+/* .zoom{
+  position: absolute;
+  color: red;
+  font-size: 30px !important;
+  left: -30px;
+} */
+
+
+#table{
+  overflow-x: hidden;
+
+}
+#table tr{
+  cursor: pointer;
+}

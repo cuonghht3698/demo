@@ -7,14 +7,17 @@
       <div class="col-6">
         <div class="textbox">
           <span>Tên sản phẩm </span>
-          <input type="text">
+          <input type="text" placeholder="Tên sp:" [(ngModel)]="name" id="name">
         </div>
         <div class="textbox">
           <span>Loại sản phẩm </span>
-          <input type="text">
+          <select style="height: 30px;" name="" id="cate"  (change)="Select($event)">
+            <option value="" selected disabled>-Chọn loại sản phẩm-.</option>
+            <option value="{{item}}" *ngFor="let item of categories">{{ item }}</option>
+          </select>
         </div> <div class="textbox">
           <span>Số lượng </span>
-          <input type="text">
+          <input type="number" placeholder="Số lượng" [(ngModel)]="count" id="count">
         </div>
       </div>
        <!--end textbox nhap -->
@@ -27,8 +30,10 @@
             <span>Ảnh sản phẩm</span>
           </div>
           <div class="col-7 select-img">
-           <i class="far fa-file" style="font-size: 150px;cursor: pointer;" (click)="ChoseFile()"></i>
-           <input type="file" style="display: none;" id="file" [(ngModel)]="pathImg">
+            <!-- <p>{{fakepathImg}}</p> -->
+           <i class="far fa-file" style="font-size: 150px;cursor: pointer;" (click)="ChoseFile()" id="imgChose" title="Chọn ảnh"></i>
+           <img src="assets/{{preview}}" alt="" id="preview" (click)="ChoseFile()" class="img">
+           <input type="file" style="display:none;" id="file" [(ngModel)]="fakepathImg" class="imgIn">
           </div>
 
         </div>
@@ -39,22 +44,30 @@
     <!-- button luu & hủy -->
     <div class="row mt-4">
       <div class="m-auto">
-      <button class="btn btn-success mr-5">Save</button>
-      <button class="btn btn-danger">Hủy</button>
+      <button class="btn btn-success mr-5" (click)="Add()">Save</button>
+      <button class="btn btn-danger huy"  (click)="Huy()">Hủy</button>
     </div>
     </div>
     <!-- end button l & h -->
 
   </div>
   <!-- data table -->
-  <div class="box">
-    <table class="table table-hover">
+  <div class="box" id="table">
+    <table class="table table-hover table-bordered table-info">
       <thead>
         <th>Tên</th>
         <th>Loại SP</th>
         <th>Số lượng</th>
-
+        <th>Ảnh</th>
       </thead>
+      <tbody id="getData">
+        <tr class="getTd" *ngFor="let item of data" (click)="getData(item)">
+          <td>{{item.name}}</td>
+          <td>{{item.categories}}</td>
+          <td>{{item.count}}</td>
+          <td><img src="assets/{{item.img}}" alt=""></td>
+        </tr>
+      </tbody>
     </table>
 
   </div>
